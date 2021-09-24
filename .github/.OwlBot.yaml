@@ -13,15 +13,16 @@
 # limitations under the License.
 
 docker:
-  image: "gcr.io/repo-automation-bots/owlbot-java:latest"
+  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
-- "/proto-google-.*/src"
+- "/proto-google-cloud.*/src"
 - "/google-.*/src"
 
 deep-preserve-regex:
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/proto-google-devtools-source-protos"
 
 deep-copy-regex:
 - source: "/google/devtools/clouddebugger/(v.*)/.*-java/proto-google-.*/src"
